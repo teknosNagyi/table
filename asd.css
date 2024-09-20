@@ -1,0 +1,29 @@
+table,tr,td {
+   border-collapse: collapse;
+   border: 1px,solid,black
+}
+
+
+table tr:first-child
+{
+    background-color:chocolate;
+    font-weight: bold;
+}
+
+table tr:not(:first-child):nth-child(2n)
+{
+    background-color: blue;
+    font-weight: bold;
+}
+
+table tr:not(:first-child):nth-child(2n+1)
+{
+    background-color: violet;
+}
+table{
+    text-align: center;
+}
+
+table tr:not(:first-child):hover{
+    background-color: coral; font-weight: bold;
+}
