@@ -19,44 +19,50 @@ const array = [
         lastname: 'Horváth'
     },
 ]
-const table = document.createElement("table")
+
+const table = document.createElement('table')
 document.body.appendChild(table)
 
-const tablehead = document.createElement("thead")
+const tablehead = document.createElement('thead')
 table.appendChild(tablehead)
 
-const tableheadrow = document.createElement("tr")
+const tableheadrow = document.createElement('tr')
 tablehead.appendChild(tableheadrow)
 
-const tableth = document.createElement("th")
-tableheadrow.appendChild(tableth)
-const tableth2 = document.createElement("th")
-tableheadrow.appendChild(tableth2)
+const th = document.createElement('th')
+tableheadrow.appendChild(th)
 
+const th2 = document.createElement('th')
+tableheadrow.appendChild(th2)
 
-tableth.innerHTML='Vezetéknév'
-tableth2.innerHTML='Keresztnév'
-tableth2.colSpan = 2
-const tablebody= document.createElement("tbody")
+th.innerHTML="Veznev"
+th2.innerHTML="Kernev"
+th2.colSpan = 2
+
+const tablebody = document.createElement('tbody')
 table.appendChild(tablebody)
-for (const person of array)
-{
-    const tr = document.createElement("tr")
-    const lastname = document.createElement("td")
-    tr.appendChild(lastname)
+for(const person of array){
+    const tr = document.createElement('tr')
+    const lastname = document.createElement('td')
     tablebody.appendChild(tr)
-    lastname.innerHTML= person.lastname
+    tr.appendChild(lastname)
+    lastname.innerHTML = person.lastname
+    const firstname = document.createElement('td')
+    tablebody.appendChild(tr)
+    tr.appendChild(firstname)
+    firstname.innerHTML = person.firstname1
+    
+    
+    tablebody.appendChild(tr)
+    
 
-    if (firstname2===undefined){
-        
+    if(person.firstname2===undefined){
+        firstname.colSpan = 2
+    }
+    else{
+        const firstname2 = document.createElement('td')
+        firstname2.innerHTML = person.firstname2
+        tr.appendChild(firstname2)
+
     }
 }
-
-for (const person2 of array)
-    {
-        const tr = document.createElement("tr")
-        const firstname1 = document.createElement("td")
-        tr.appendChild(lastname)
-        tablebody.appendChild(tr)
-        lastname.innerHTML= person.lastname
-    }
