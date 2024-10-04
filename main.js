@@ -29,26 +29,22 @@ let array = [
 ]
 
 const table = document.createElement('table')
-document.body.appendChild(table)
-
 const tablehead = document.createElement('thead')
-table.appendChild(tablehead)
-
+const tablebody = document.createElement('tbody')
 const tableheadrow = document.createElement('tr')
-tablehead.appendChild(tableheadrow)
-
 const th = document.createElement('th')
-tableheadrow.appendChild(th)
-
 const th2 = document.createElement('th')
-tableheadrow.appendChild(th2)
-
 const th3 = document.createElement('th')
-tableheadrow.appendChild(th3)
-
 const th4 = document.createElement('th')
-tableheadrow.appendChild(th4)
 
+document.body.appendChild(table)
+table.appendChild(tablehead)
+table.appendChild(tablebody)
+tablehead.appendChild(tableheadrow)
+tableheadrow.appendChild(th)
+tableheadrow.appendChild(th2)
+tableheadrow.appendChild(th3)
+tableheadrow.appendChild(th4)
 
 th.innerHTML="Veznev"
 th2.innerHTML="Kernev"
@@ -56,8 +52,8 @@ th2.colSpan = 2
 th3.innerHTML="házas"
 th4.innerHTML="állat"
 
-const tablebody = document.createElement('tbody')
-table.appendChild(tablebody)
+
+
 for(const person of array){
     const tr = document.createElement('tr')
 
@@ -113,4 +109,21 @@ for(const person of array){
     }
     
 }
+const form = document.getElementById('form')
+form.addEventListener('submit',function(e){
+    e.preventDefault()
+    const lastname =document.getElementById('lastname')
+    const firstname1 =document.getElementById('firstname1')
+    const firstname2 =document.getElementById('lastname2')
+    const married =document.getElementById('married')
+    const pet =document.getElementById('pet')
+    const lastmamevalue =lastname.value
+    const firstname1value = firstname1.value
+    const firstname2value = firstname2.value
+    const marriedchecked = married.checked
+    const petvalue = pet.value
+
+    
+    
+})
 
