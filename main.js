@@ -1,22 +1,30 @@
-const array = [
+let array = [
     {
         firstname1: 'Géza',
         firstname2: 'Ferenc',
-        lastname: 'Kocsis'
+        lastname: 'Kocsis',
+        married: true,
+        pet: 'kutya'
     },
     {
         firstname1: 'Mária',
         firstname2: 'Júlia',
-        lastname: 'Horváth'
+        lastname: 'Horváth',
+        married: false,
+        pet: 'macska'
     },
     {
         firstname1: 'Ferenc',
-        lastname: 'Balogh'
+        lastname: 'Balogh',
+        married: false,
+        pet: 'teknős'
     },
     {
         firstname1: 'Gábor',
         firstname2: 'Attila',
-        lastname: 'Horváth'
+        lastname: 'Horváth',
+        married: true,
+        pet: 'macska'
     },
 ]
 
@@ -35,22 +43,35 @@ tableheadrow.appendChild(th)
 const th2 = document.createElement('th')
 tableheadrow.appendChild(th2)
 
+const th3 = document.createElement('th')
+tableheadrow.appendChild(th3)
+
+const th4 = document.createElement('th')
+tableheadrow.appendChild(th4)
+
+
 th.innerHTML="Veznev"
 th2.innerHTML="Kernev"
 th2.colSpan = 2
+th3.innerHTML="házas"
+th4.innerHTML="állat"
 
 const tablebody = document.createElement('tbody')
 table.appendChild(tablebody)
 for(const person of array){
     const tr = document.createElement('tr')
+
     const lastname = document.createElement('td')
     tablebody.appendChild(tr)
     tr.appendChild(lastname)
     lastname.innerHTML = person.lastname
+
     const firstname = document.createElement('td')
     tablebody.appendChild(tr)
     tr.appendChild(firstname)
     firstname.innerHTML = person.firstname1
+    
+    
     
     
     tablebody.appendChild(tr)
@@ -73,7 +94,23 @@ for(const person of array){
                 asd.classList.remove('selected')
                 
             }e.currentTarget.classList.add('selected')
+
+            
     })
+    
+    const hazassag = document.createElement('td')
+            tablebody.appendChild(tr)
+            tr.appendChild(hazassag)
+    hazassag.innerHTML=person.married
+    const allat = document.createElement('td')
+            tablebody.appendChild(tr)
+            tr.appendChild(allat)
+    allat.innerHTML=person.pet
+    if(hazassag.innerHTML==="true"){
+        hazassag.innerHTML="igen"
+    }else {
+        hazassag.innerHTML="nem"
+    }
     
 }
 
