@@ -127,3 +127,12 @@ form.addEventListener('submit',function(e){
     
 })
 
+
+function createtablecell(htmlElement,inerHTML,ParentElement){
+        const asd =document.createElement(htmlElement)
+        asd.innerHTML=inerHTML
+        ParentElement.appendChild(asd)
+    
+
+}
+
