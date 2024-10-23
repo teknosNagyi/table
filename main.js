@@ -27,32 +27,36 @@ let array = [
         pet: 'macska'
     },
 ];
+let valami =[
+   { th: 'Veznev'},
+    {th:'Kernev'},
+    {th:'házas'},
+    {th:'állat'}
+]
 
 const table = document.createElement('table');
 const tablehead = document.createElement('thead');
 const tablebody = document.createElement('tbody');
 const tableheadrow = document.createElement('tr');
-const th = document.createElement('th');
-const th2 = document.createElement('th');
-const th3 = document.createElement('th');
-const th4 = document.createElement('th');
+
 
 document.body.appendChild(table);
 table.appendChild(tablehead);
 table.appendChild(tablebody);
 tablehead.appendChild(tableheadrow);
-tableheadrow.appendChild(th);
-tableheadrow.appendChild(th2);
-tableheadrow.appendChild(th3);
-tableheadrow.appendChild(th4);
+for (let i =0; i<valami.length;i++){
+    const th = document.createElement('th')
+    th.innerHTML=valami.th[i]
+    
+    if (valami[i]===2){
+        th.colspan =valami[i].colspan
+    }
+    tableheadrow.appendChild(th)
+}
 
-th.innerHTML = "Veznev";
-th2.innerHTML = "Kernev";
-th2.colSpan = 2;
-th3.innerHTML = "házas";
-th4.innerHTML = "állat";
 
-// Render table rows
+
+
 for (const person of array) {
     const tr = document.createElement('tr');
     
@@ -109,7 +113,7 @@ form.addEventListener('submit', function(e) {
     const marriedchecked = married.checked;
     const petvalue = pet.value;
 
-    // New person object to be pushed
+    
     const newPerson = {
         lastname: lastnamevalue,
         firstname1: firstname1value,
@@ -126,7 +130,7 @@ form.addEventListener('submit', function(e) {
     }
 });
 
-// Validate fields function
+
 function validatefields(lastname, firstname, pet) {
     let result = true;
     if (lastname.value === "") {
@@ -150,14 +154,14 @@ function validatefields(lastname, firstname, pet) {
     return result;
 }
 
-// Function to create table cell
+
 function createtablecell(htmlElement, innerHTML, parentElement) {
     const asd = document.createElement(htmlElement);
     asd.innerHTML = innerHTML;
     parentElement.appendChild(asd);
 }
 
-// Function to render the table
+
 function renderTable() {
     for (const person of array) {
         const tr = document.createElement('tr');
