@@ -46,11 +46,11 @@ table.appendChild(tablebody);
 tablehead.appendChild(tableheadrow);
 
 for (let i =0; i<valami.length;i++){
-    const th = document.createElement('th')
+    const th = createtablecell('th', valami[i].th, tableheadrow);
     th.innerHTML=valami[i].th
     
     if (valami[i].th==="Kernev"){
-        th.colspan =valami[i].colspan
+        th.colspan =valami[i].colSpan
     }
     tableheadrow.appendChild(th)
 }
@@ -160,6 +160,7 @@ function createtablecell(htmlElement, innerHTML, parentElement) {
     const asd = document.createElement(htmlElement);
     asd.innerHTML = innerHTML;
     parentElement.appendChild(asd);
+    return asd;
 }
 
 
