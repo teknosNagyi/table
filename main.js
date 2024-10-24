@@ -44,11 +44,12 @@ document.body.appendChild(table);
 table.appendChild(tablehead);
 table.appendChild(tablebody);
 tablehead.appendChild(tableheadrow);
+
 for (let i =0; i<valami.length;i++){
     const th = document.createElement('th')
-    th.innerHTML=valami.th[i]
+    th.innerHTML=valami[i].th
     
-    if (valami[i]===2){
+    if (valami[i].th==="Kernev"){
         th.colspan =valami[i].colspan
     }
     tableheadrow.appendChild(th)
