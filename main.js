@@ -62,63 +62,69 @@ for (let i =0;i<valami.length;i++){
 }
 
 
+rendertable()
 
 
-for(const person of array){
-    const tr = document.createElement('tr')
-
-    const lastname = document.createElement('td')
-    tablebody.appendChild(tr)
-    tr.appendChild(lastname)
-    lastname.innerHTML = person.lastname
-
-    const firstname = document.createElement('td')
-    tablebody.appendChild(tr)
-    tr.appendChild(firstname)
-    firstname.innerHTML = person.firstname1
+function rendertable(){
+    for(const person of array){
+        const tr = document.createElement('tr')
     
+        const lastname = document.createElement('td')
+        tablebody.appendChild(tr)
+        tr.appendChild(lastname)
+        lastname.innerHTML = person.lastname
     
-    
-    
-    tablebody.appendChild(tr)
-    
-
-    if(person.firstname2===undefined){
-        firstname.colSpan = 2
-    }
-    else{
-        const firstname2 = document.createElement('td')
-        firstname2.innerHTML = person.firstname2
-        tr.appendChild(firstname2)
-
-    }
-    tr.addEventListener('click',function(e){
-        console.log('click')
+        const firstname = document.createElement('td')
+        tablebody.appendChild(tr)
+        tr.appendChild(firstname)
+        firstname.innerHTML = person.firstname1
         
-        const asd=tablebody.querySelector('.selected')
-            if(asd!=undefined){
-                asd.classList.remove('selected')
-                
-            }e.currentTarget.classList.add('selected')
-
+        
+        
+        
+        tablebody.appendChild(tr)
+        
+    
+        if(person.firstname2===undefined){
+            firstname.colSpan = 2
+        }
+        else{
+            const firstname2 = document.createElement('td')
+            firstname2.innerHTML = person.firstname2
+            tr.appendChild(firstname2)
+    
+        }
+        tr.addEventListener('click',function(e){
+            console.log('click')
             
-    })
+            const select=tablebody.querySelector('.selected')
+                if(select!=undefined){
+                    select.classList.remove('selected')
+                    
+                }e.currentTarget.classList.add('selected')
     
-    const hazassag = document.createElement('td')
-            tablebody.appendChild(tr)
-            tr.appendChild(hazassag)
-    hazassag.innerHTML=person.married
-    const allat = document.createElement('td')
-            tablebody.appendChild(tr)
-            tr.appendChild(allat)
-    allat.innerHTML=person.pet
-    if(hazassag.innerHTML==="true"){
-        hazassag.innerHTML="igen"
-    }else {
-        hazassag.innerHTML="nem"
+                
+        })
+        
+        const hazassag = document.createElement('td')
+                tablebody.appendChild(tr)
+                tr.appendChild(hazassag)
+        hazassag.innerHTML=person.married
+        const allat = document.createElement('td')
+                tablebody.appendChild(tr)
+                tr.appendChild(allat)
+        allat.innerHTML=person.pet
+        if(hazassag.innerHTML==="true"){
+            hazassag.innerHTML="igen"
+        }else {
+            hazassag.innerHTML="nem"
+        }
+        
     }
-    
 }
+
+
+
 const form = document.getElementById('form')
 form.addEventListener('submit',function(e){
     e.preventDefault()
@@ -129,14 +135,20 @@ form.addEventListener('submit',function(e){
     const pet =document.getElementById('pet')
     const lastmamevalue =lastname.value
     const firstname1value = firstname1.value
-    const firstname2value = firstname2.value
+    let firstname2value = firstname2.value
     const marriedchecked = married.checked
     const petvalue = pet.value
 
     
     
 })
+firstname2value = firstname2value === "" ?
 
+undefined:firstname2value
+
+const newperson={
+    lastname : 
+}
 
 function createtablecell(htmlElement,inerHTML,ParentElement){
         const asd =document.createElement(htmlElement)
