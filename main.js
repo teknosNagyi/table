@@ -27,30 +27,40 @@ let array = [
         pet: 'macska'
     },
 ]
+let valami = [
+    {th: 'Veznev'},
+    {th: 'Kernev'},
+    {th: 'házas'},
+    {th: 'Állat'},
+
+
+]
 
 const table = document.createElement('table')
 const tablehead = document.createElement('thead')
 const tablebody = document.createElement('tbody')
 const tableheadrow = document.createElement('tr')
-const th = document.createElement('th')
-const th2 = document.createElement('th')
-const th3 = document.createElement('th')
-const th4 = document.createElement('th')
+
 
 document.body.appendChild(table)
 table.appendChild(tablehead)
 table.appendChild(tablebody)
 tablehead.appendChild(tableheadrow)
-tableheadrow.appendChild(th)
-tableheadrow.appendChild(th2)
-tableheadrow.appendChild(th3)
-tableheadrow.appendChild(th4)
 
-th.innerHTML="Veznev"
-th2.innerHTML="Kernev"
-th2.colSpan = 2
-th3.innerHTML="házas"
-th4.innerHTML="állat"
+
+
+for (let i =0;i<valami.length;i++){
+    const th = createtablecell('th',valami[i].th,tableheadrow)
+    th.innerHTML=valami[i].th
+
+    if (valami[i]===1){
+        th.colSpan=valami[i].colspan
+    }
+    
+
+    tableheadrow.appendChild(th)
+}
+
 
 
 
@@ -132,6 +142,8 @@ function createtablecell(htmlElement,inerHTML,ParentElement){
         const asd =document.createElement(htmlElement)
         asd.innerHTML=inerHTML
         ParentElement.appendChild(asd)
+
+        return asd
     
 
 }
