@@ -36,21 +36,17 @@ let valami = [
 
 ]
 
-const table = document.createElement('table')
-const tablehead = document.createElement('thead')
-const tablebody = document.createElement('tbody')
-const tableheadrow = document.createElement('tr')
+createHtmlElement("table","persontable",document.body)
+createHtmlElement("thead","personthead",persontable)
+createHtmlElement("tbody","persontbody",persontable)
+createHtmlElement("tr","persontr",persontbody)
 
 
-document.body.appendChild(table)
-table.appendChild(tablehead)
-table.appendChild(tablebody)
-tablehead.appendChild(tableheadrow)
 
 
 
 for (let i =0;i<valami.length;i++){
-    const th = createtablecell('th',valami[i].th,tableheadrow)
+    const th = createtablecell('th',valami[i].th,persontr)
     th.innerHTML=valami[i].th
 
     if (valami[i].th==="Kernev"){
@@ -58,7 +54,7 @@ for (let i =0;i<valami.length;i++){
     }
     
 
-    tableheadrow.appendChild(th)
+    
 }
 
 
