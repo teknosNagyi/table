@@ -37,16 +37,16 @@ let valami = [
 ]
 
 createHtmlElement("table","persontable",document.body)
-createHtmlElement("thead","personthead",persontable)
-createHtmlElement("tbody","persontbody",persontable)
-createHtmlElement("tr","persontr",persontbody)
+createhtmlelementparentid("thead", "personthead", "persontable");
+createhtmlelementparentid("tablebody", "persontbody", "personthead");
+createhtmlelementparentid("tr", "persontr", "persontbody");
 
 
 
 
 
 for (let i =0;i<valami.length;i++){
-    const th = createtablecell('th',valami[i].th,persontr)
+    const th = createtablecell('th',valami[i].th,document.getElementById('persontr'))
     th.innerHTML=valami[i].th
 
     if (valami[i].th==="Kernev"){
@@ -179,14 +179,4 @@ function validatefields(lastname,firstname,pet){
         result= false;
     }
     return result
-}
-
-function createtablecell(htmlElement,inerHTML,ParentElement){
-        const asd =document.createElement(htmlElement)
-        asd.innerHTML=inerHTML
-        ParentElement.appendChild(asd)
-
-        return asd
-    
-
 }
