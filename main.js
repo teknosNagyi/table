@@ -38,9 +38,10 @@ let valami = [
 
 createHtmlElement("table","persontable",document.body)
 createhtmlelementparentid("thead", "personthead", "persontable");
-createhtmlelementparentid("tbody", "persontbody", "personthead");
-createhtmlelementparentid("tr", "persontr", "persontbody");
+createhtmlelementparentid("tbody", "persontbody", "persontable");
 
+createhtmlelementparentid("tr", "persontr", "persontbody");
+renderTableHeader()
 
 
 
@@ -49,7 +50,7 @@ createhtmlelementparentid("tr", "persontr", "persontbody");
 
 
 rendertable()
-renderTableHeader()
+
 
 
 
