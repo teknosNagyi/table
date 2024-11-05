@@ -30,37 +30,38 @@ function createhtmlelementparentid(tag,id,parentid){//imsét harom paramétert v
     
 }
 function renderTableHeader(){
-    const th = doc
+    const tableheader = document.getElementById("persontr")
+    for (let i =0;i<valami.length;i++){
+        const th = createtablecell('th',valami[i].th,document.getElementById('persontr'))
+        th.innerHTML=valami[i].th
+    
+        if (valami[i].th==="Kernev"){
+            th.colSpan=2
+        }
+        
+    
+        
+    }
 }
 
-function rendertable(array){ //táblázat megjelenitő függvény
+function rendertable(){ //táblázat megjelenitő függvény
     let tablebody =document.getElementById('persontbody') //tablebody meghívása
     for(const person of array){ //a person objektumon végig megyünk
         const tr = document.createElement('tr') //új sor létrehozása
     
-        const lastname = document.createElement('td') // uj cella a lastnamehez
-        tablebody.appendChild(tr) //hozza adjuk a sort a tablebodyhoz
-        tr.appendChild(lastname)//hozza adjuk a cellat a sorhoz
-        lastname.innerHTML = person.lastname // a cella tartalma az objektumban levo lastname erteket atveszi
+        const lastname = createtablecell('td',person.lastname,tr) // uj cella a lastnamehez
+        
     
-        const firstname = document.createElement('td') //cella az elso firstnamhez 
-        tablebody.appendChild(tr)//hozza adjuk a sort a tablebodyhoz
-        tr.appendChild(firstname)//hozza adjuk a cellat a sorhoz
-        firstname.innerHTML = person.firstname1 // objektumb firstname1 ertek atadasa
+        const firstname = createtablecell('td',person.firstname1,tr) //cella az elso firstnamhez 
         
-        
-        
-        
-        tablebody.appendChild(tr)
         
     
         if(person.firstname2===undefined){
             firstname.colSpan = 2 //ha nincs csak 1 keresztnev colspan 2
         }
         else{
-            const firstname2 = document.createElement('td')//cella az maosdik firstnamhez 
-            firstname2.innerHTML = person.firstname2// objektumb firstname2 ertek atadasa
-            tr.appendChild(firstname2)
+            const firstname2 = createtablecell('td',person.firstname2,tr)//cella az maosdik firstnamhez 
+            
     
         }
         tr.addEventListener('click',function(e){ //esemenykezelo

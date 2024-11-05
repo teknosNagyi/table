@@ -45,21 +45,11 @@ createhtmlelementparentid("tr", "persontr", "persontbody");
 
 
 
-for (let i =0;i<valami.length;i++){
-    const th = createtablecell('th',valami[i].th,document.getElementById('persontr'))
-    th.innerHTML=valami[i].th
 
-    if (valami[i].th==="Kernev"){
-        th.colSpan=2
-    }
-    
-
-    
-}
 
 
 rendertable()
-
+renderTableHeader()
 
 
 
