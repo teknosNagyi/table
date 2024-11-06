@@ -56,7 +56,7 @@ function rendertable(){ //táblázat megjelenitő függvény
         
         
     
-        if(person.firstname2== ""){
+        if(person.firstname2== undefined){
             firstname.colSpan = 2 //ha nincs csak 1 keresztnev colspan 2
         }
         else{
@@ -105,7 +105,7 @@ form.addEventListener('submit',function(e){ //esemenykezelo az urlapra
     //ertekek lekerdezese
     const lastmamevalue =lastname.value
     const firstname1value = firstname1.value
-    const firstname2value = firstname2.value
+    let firstname2value = firstname2.value
     const marriedchecked = married.checked
     const petvalue = pet.value
 
@@ -113,7 +113,9 @@ form.addEventListener('submit',function(e){ //esemenykezelo az urlapra
     
 
 
-
+if (firstname2value===""){
+    firstname2value = undefined
+}
 
 
 const emberek={ //objecktum letrehozasa az urlap adataival
