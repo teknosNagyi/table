@@ -122,6 +122,9 @@ function validatefields(lastname, firstname, pet) {
     }
     return result
 }
+//a clear massage es a validate element mar nem ment ertem a lenyeget nagyjabol 
+//hogy roviditene a validatefields fuggvenyt mert nem kene egyesevel leirni a hiba
+//uzeneteket de nem sikerul hozza fogni lehet csak keso van mar es nem fog az agyam
 
 
 
