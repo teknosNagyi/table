@@ -56,7 +56,7 @@ function rendertable(){ //táblázat megjelenitő függvény
         
         
     
-        if(person.firstname2===undefined){
+        if(person.firstname2== ""){
             firstname.colSpan = 2 //ha nincs csak 1 keresztnev colspan 2
         }
         else{
