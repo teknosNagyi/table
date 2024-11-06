@@ -40,7 +40,7 @@ createHtmlElement("table","persontable",document.body)
 createhtmlelementparentid("thead", "personthead", "persontable");
 createhtmlelementparentid("tbody", "persontbody", "persontable");
 
-createhtmlelementparentid("tr", "persontr", "persontbody");
+createhtmlelementparentid("tr", "persontr", "personthead");
 renderTableHeader()
 
 
