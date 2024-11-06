@@ -93,6 +93,10 @@ form.addEventListener('submit', function (e) { //esemenykezelo az urlapra
     }
 
     if (validatefields(lastname, firstname1, pet)) { //ha minden mezo valid 
+        const hibak = document.querySelectorAll('.error');
+        for (let i =0 ; i<hibak.length;i++){
+            hibak[i].innerHTML="";
+        }
         const tablebody = document.getElementById('persontbody')//tbody meghivasa
         array.push(emberek)//az uj embert az arrayhoz adjuk
         console.log(array)//kiirjuk az arrayt a konzolra
