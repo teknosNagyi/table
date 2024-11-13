@@ -29,6 +29,14 @@ function createhtmlelementparentid(tag, id, parentid) {//imsét harom paraméter
     }
 
 }
+
+function clearmessage(){
+    const errors = document.querySelectorAll('.error')
+
+    for (let i =0; i<errors.length;i++){
+        error[i].innerHTML="";
+    }
+}
 function renderTableHeader() {
     const valami = [
         { th: 'Veznev' },
